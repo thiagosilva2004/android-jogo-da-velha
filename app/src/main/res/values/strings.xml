@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JogoDaVelha</string>
+    <string name="jogo_da_velha">Jogo Da Velha</string>
+    <string name="reiniciar">Reiniciar</string>
+</resources>

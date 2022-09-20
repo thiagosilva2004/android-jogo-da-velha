@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         topEnd = findViewById(R.id.topEnd)
 
         center= findViewById(R.id.center)
-        centerStart = findViewById(R.id.bottomStart)
+        centerStart = findViewById(R.id.centerStart)
         centerEnd = findViewById(R.id.centerEnd)
 
         bottom = findViewById(R.id.bottom)
@@ -93,9 +93,18 @@ class MainActivity : AppCompatActivity() {
                 }  else if (playerWin(2)){
                     Toast.makeText(this@MainActivity, "Player 2 Venceu", Toast.LENGTH_SHORT).show()
                     isGameEnd = true
+                }else if (gameEmpatado()){
+                    Toast.makeText(this@MainActivity, "Empate", Toast.LENGTH_SHORT).show()
+                    isGameEnd = true
                 }
             }
         }
+    }
+
+    private fun gameEmpatado(): Boolean {
+        return top.tag != null && topEnd.tag != null && topStart.tag != null &&
+                center.tag != null && centerEnd.tag != null && centerStart.tag != null &&
+                bottom.tag != null && bottomEnd.tag != null && bottomStart.tag != null
     }
 
     private fun playerWin(value: Int): Boolean {
